@@ -15,23 +15,21 @@ def pure_sui():
 
 Run celery in new tab of terminal
 ```
-celery -A pure_celery worker -l info
+$ celery -A pure_celery worker -l info
 ```
 
 Run rabbitmq in another tab of terminal
 ```
-docker run --name my_rabbitmq -p 5672:5672 rabbitmq
+$ docker run --name my_rabbitmq -p 5672:5672 rabbitmq
 ```
 
 Done
 
 ### Let's try
 ```
-python manage.py shell
-
+$ python manage.py shell
 >>> from pure_celery import pure_sui
 >>> pure_sui.delay()
-
 <AsyncResult: dce57d7d-0625-4270-858e-705dc495db38>
 ```
 
