@@ -1,7 +1,6 @@
 # Hello-Celery
-celery 筆記
 
-## Get Started 
+## Get Started with Celery and Rabbitmq
 
 pure_celery.py
 ```python
@@ -14,23 +13,30 @@ def pure_sui():
   print('VERY SUI')
 ```
 
-celery 開--開
+Run celery in new tab of terminal
 ```
 celery -A pure_celery worker -l info
 ```
 
-rabbitmq 開--開
+Run rabbitmq in another tab of terminal
 ```
 docker run --name my_rabbitmq -p 5672:5672 rabbitmq
 ```
 
-完成
+Done
 
-### 試送工課
+### Let's try
 ```
 python manage.py shell
+
 >>> from pure_celery import pure_sui
 >>> pure_sui.delay()
+
 <AsyncResult: dce57d7d-0625-4270-858e-705dc495db38>
 ```
-成功
+
+Done. You should see the celery logs as:
+```
+[2019-12-03 22:14:41,279: INFO/MainProcess] Received task: pure_celery.pure_sui[dce57d7d-0625-4270-858e-705dc495db38]  
+[2019-12-03 22:14:41,281: WARNING/ForkPoolWorker-1] VERY SUI
+```
