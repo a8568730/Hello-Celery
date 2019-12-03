@@ -37,6 +37,6 @@ python manage.py shell
 
 Done. You should see the celery logs as:
 ```
-[2019-12-03 22:14:41,279: INFO/MainProcess] Received task: pure_celery.pure_sui[dce57d7d-0625-4270-858e-705dc495db38]  
+[2019-12-03 22:14:41,279: INFO/MainProcess] Received task: pure_celery.pure_sui[dce57d7...]  
 [2019-12-03 22:14:41,281: WARNING/ForkPoolWorker-1] VERY SUI
 ```
