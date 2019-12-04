@@ -1,5 +1,11 @@
 # Hello-Celery
 
+## Tàu
+
+```
+pip install celery
+```
+
 ## Get Started with Celery and Rabbitmq
 
 Create a simple celery task file called hello_celery.py:
@@ -13,15 +19,6 @@ def sayhi():
   print('Hello world')
 ```
 
-#### Optional: Use Default Settings
-
-You may define Celery instance with default settings:
-```python
-app = Celery() 
-# It equals to
-# `Celery(MODULE_NAME, broker='amqp://guest@localhost:5672/')`
-```
-
 ### Run 
 Run celery
 ```
@@ -32,8 +29,7 @@ Run rabbitmq
 $ docker run --name my_rabbitmq -p 5672:5672 rabbitmq
 ```
 
-### Done! 
-Let's try to send a task message:
+Done! Let's try to send a task message:
 ```
 $ python manage.py shell
 >>> from hello_celery import sayhi
