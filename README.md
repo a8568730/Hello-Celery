@@ -37,12 +37,17 @@ You should see logs below in celery:
 [...: WARNING/ForkPoolWorker-1] Hello world
 ```
 
-
-
-## Get Started with Celery and Rabbitmq
+#### Default Celery Argument
 
 hello_celery.py
 ```python
-# Equals to `app = Celery('hello_celery', broker='amqp://guest@localhost:5672/')`
+from celery import Celery
+ 
 app = Celery()
+# Above equals to 
+# `Celery(MODULE_NAME, broker='amqp://guest@localhost:5672/')`
+ 
+@app.task
+def sayhi():
+  print('Hello world')
 ```
