@@ -33,7 +33,7 @@ $ docker run --name my_rabbitmq -p 5672:5672 rabbitmq
 
 Let's try to send a task message
 ```
-$ python manage.py shell
+$ python
 >>> from hello_celery import sayhi
 >>> sayhi.delay()
 ```
