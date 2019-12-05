@@ -11,22 +11,11 @@ app.config_from_object('my_proj.celeryconfig')
 app.autodiscover_tasks()
 
 
-@app.on_after_configure.connect
-def setup_periodic_tasks(sender, **kwargs):
-    print('setup...')
-    sender.add_periodic_task(
-            2.0, head_task.s('hello'), name='print hello every 2'
-            )
-    from django_autodiscover.my_proj.app_one.tasks import simple_print
-    try:
-        sender.add_periodic_task(
-            2.0, simple_print.s('hello'), name='print hello every 2'
-            )
-    except Exception as err: 
-        print(err)
-    print('setup done')
+#@app.on_after_configure.connect
+#def setup_periodic_tasks(sender, **kwargs):
+#    print('setup...')
+#    sender.add_periodic_task(
+#        2.0, simple_print.s('hello'), name='print hello every 2'
+#    )
+#    print('setup done')
 
-
-@app.task
-def head_task(msg):
-    print('HEAD_TASK ' + msg)
