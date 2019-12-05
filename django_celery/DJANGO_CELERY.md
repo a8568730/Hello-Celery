@@ -9,11 +9,12 @@ $ django-admin startproject django_celery
 ```
 
 # Khai-huat
-django_celery/celeryconfig.py
+* django_celery/celeryconfig.py
 ```
 TIME_ZONE = 'Asia/Taipei'
 ```
-Task--ê tshiànn khuànn django_celery/celery.py
+
+* django_celery/celery.py
 
 
 # Tsáu
