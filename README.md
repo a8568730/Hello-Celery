@@ -43,3 +43,7 @@ You should see logs below in celery:
 [...: WARNING/ForkPoolWorker-1] Hello world
 ```
 
+# Tutorial order
+* hello_world
+* periodic_task
+* set_timezone
